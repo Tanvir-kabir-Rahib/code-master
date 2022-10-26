@@ -9,7 +9,7 @@ import logo from '../../../media/picture/logo.png';
 
 const Header = () => {
     return (
-        <Navbar collapseOnSelect expand="lg" bg="light" variant="secondary">
+        <Navbar collapseOnSelect expand="lg" bg="light" variant="secondary" className='mb-5'>
             <Container>
                 <Image
                     alt=""
