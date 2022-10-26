@@ -18,19 +18,19 @@ const Header = () => {
                     height="75"
                     className="d-inline-block align-top"
                 />
-                <Navbar.Brand href="#home" className='fs-3 fw-semibold'><Link className='text-decoration-none text-info'>Code Master</Link></Navbar.Brand>
+                <Navbar.Brand href="#home" className='fs-3 fw-semibold'><Link to="/" className='text-decoration-none text-info'>Code Master</Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <NavLink to="/courses" className={({ isActive }) =>
-                            isActive ? "mx-3 text-decoration-none text-info fw-semibold text-decoration-underline" : "mx-3 fw-semibold"
-                        }>Courses</NavLink>
-                        <NavLink to="/faq" className={({ isActive }) =>
-                            isActive ? "mx-3 text-decoration-none text-info fw-semibold text-decoration-underline" : "mx-3 fw-semibold"
-                        }>FAQ</NavLink>
-                        <NavLink to="/blog" className={({ isActive }) =>
-                            isActive ? "mx-3 text-decoration-none text-info fw-semibold text-decoration-underline" : "mx-3 fw-semibold"
-                        }>Blog</NavLink>
+                        <NavLink className={({ isActive }) =>
+                            isActive ? "mx-3 text-decoration-none text-success fw-semibold" : "mx-3 fw-semibold text-decoration-none text-info"
+                        } to="/courses">Courses</NavLink>
+                        <NavLink className={({ isActive }) =>
+                            isActive ? "mx-3 text-decoration-none text-success fw-semibold" : "mx-3 fw-semibold text-decoration-none text-info"
+                        } to="/faq">FAQ</NavLink>
+                        <NavLink className={({ isActive }) =>
+                            isActive ? "mx-3 text-decoration-none text-success fw-semibold" : "mx-3 fw-semibold text-decoration-none text-info"
+                        } to="/blog">Blog</NavLink>
                     </Nav>
                     <Nav>
                         <Nav.Link href="#deets">More deets</Nav.Link>
