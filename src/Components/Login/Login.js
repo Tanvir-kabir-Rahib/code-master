@@ -1,5 +1,7 @@
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
-import { Button, ButtonGroup, Form } from 'react-bootstrap';
+import { Button, ButtonGroup, Form, FormGroup } from 'react-bootstrap';
+import toast from 'react-hot-toast';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider';
@@ -7,7 +9,9 @@ import './Login.css';
 
 const Login = () => {
     const [err, setErr] = useState(null)
-    const {login, setLoading} = useContext(AuthContext)
+    const { login, setLoading, providerLogin } = useContext(AuthContext)
+    const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
     const navigate = useNavigate()
     const location = useLocation()
     const from = location.state?.from?.pathname || "/";
@@ -17,16 +21,35 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         login(email, password)
-        .then(result => {
-            setErr(null)
-            form.reset()
-                navigate(from, {replace:true})
+            .then(result => {
+                setErr(null)
+                form.reset()
+                navigate(from, { replace: true })
+                toast.success("Successfully Logged In.")
 
-        })
-        .catch(error => setErr(error.message))
-        .finally(() => {
-            setLoading(false)
-        })
+            })
+            .catch(error => setErr(error.message))
+            .finally(() => {
+                setLoading(false)
+            })
+    }
+    const handleGoogleLogin = () => {
+        providerLogin(googleProvider)
+            .then(result => {
+                setErr(null)
+                navigate(from, { replace: true })
+                toast.success("Successfully Logged In.")
+            })
+            .catch(error => setErr(error))
+    }
+    const handleGithubLogin = () => {
+        providerLogin(githubProvider)
+            .then(result => {
+                setErr(null)
+                navigate(from, { replace: true })
+                toast.success("Successfully Logged In.")
+            })
+            .catch(error => setErr(error))
     }
     return (
         <div className='form-container'>
@@ -42,17 +65,19 @@ const Login = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control name='password' className='py-2' type="password" placeholder="Password" />
                 </Form.Group>
-                <Form.Text className="text-danger">
-                    {err}.
-                </Form.Text>
+                <FormGroup className={err ? "mb-3 mt-0" : "d-none"}>
+                    <Form.Text className="text-danger">
+                        {err}.
+                    </Form.Text>
+                </FormGroup>
                 <Button variant="info" type="submit" className='text-white fs-5 fw-semibold rounded-3 px-5'>
                     Login
                 </Button>
                 <p className='mt-2 '>New to Code Master? <Link to="/register" className='text-info fw-semibold'>Create New Account.</Link></p>
                 <ButtonGroup>
-                <Button className='me-3' variant='outline-primary'><FaGoogle /> Login with Google</Button>
-                <Button className='me-3' variant='outline-dark'><FaGithub /> Login with Github</Button>
-            </ButtonGroup>
+                    <Button className='me-3' variant='outline-primary' onClick={handleGoogleLogin}><FaGoogle /> Login with Google</Button>
+                    <Button className='me-3' variant='outline-dark' onClick={handleGithubLogin}><FaGithub /> Login with Github</Button>
+                </ButtonGroup>
             </Form>
         </div>
     );

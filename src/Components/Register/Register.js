@@ -10,7 +10,7 @@ const Register = () => {
     const [err, setErr] = useState(null)
     const { createUser, updateUser, providerLogin } = useContext(AuthContext)
     const googleProvider = new GoogleAuthProvider();
-    const githubProvider = new GithubAuthProvider()
+    const githubProvider = new GithubAuthProvider();
     const nevigate = useNavigate()
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -41,6 +41,7 @@ const Register = () => {
     const handleGoogleRegister = () => {
         providerLogin(googleProvider)
         .then(result => {
+            setErr(null)
             nevigate("/")
             toast.success("Successfully Registered.")
         })
@@ -49,6 +50,7 @@ const Register = () => {
     const handleGithubRegister = () =>{
         providerLogin(githubProvider)
         .then(result => {
+            setErr(null)
             nevigate("/")
             toast.success("Successfully Registered.")
         })
