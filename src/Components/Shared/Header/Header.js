@@ -23,20 +23,22 @@ const Header = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
                         <NavLink className={({ isActive }) =>
-                            isActive ? "mx-3 text-decoration-none text-success fw-semibold" : "mx-3 fw-semibold text-decoration-none text-info"
+                            isActive ? "mx-3 text-decoration-none text-success fw-semibold text-decoration-underline" : "mx-3 fw-semibold text-decoration-none text-info"
                         } to="/courses">Courses</NavLink>
                         <NavLink className={({ isActive }) =>
-                            isActive ? "mx-3 text-decoration-none text-success fw-semibold" : "mx-3 fw-semibold text-decoration-none text-info"
+                            isActive ? "mx-3 text-decoration-none text-success fw-semibold text-decoration-underline" : "mx-3 fw-semibold text-decoration-none text-info"
                         } to="/faq">FAQ</NavLink>
                         <NavLink className={({ isActive }) =>
-                            isActive ? "mx-3 text-decoration-none text-success fw-semibold" : "mx-3 fw-semibold text-decoration-none text-info"
+                            isActive ? "mx-3 text-decoration-none text-success fw-semibold text-decoration-underline" : "mx-3 fw-semibold text-decoration-none text-info"
                         } to="/blog">Blog</NavLink>
                     </Nav>
                     <Nav>
-                        <Nav.Link href="#deets">More deets</Nav.Link>
-                        <Nav.Link eventKey={2} href="#memes">
-                            Dank memes
-                        </Nav.Link>
+                        <NavLink className={({ isActive }) =>
+                            isActive ? "mx-3 text-decoration-none text-success fw-semibold text-decoration-underline" : "mx-3 fw-semibold text-decoration-none text-info"
+                        } to="/login">Login</NavLink>
+                        <NavLink className={({ isActive }) =>
+                            isActive ? "mx-3 text-decoration-none text-success fw-semibold text-decoration-underline" : "mx-3 fw-semibold text-decoration-none text-info"
+                        } to="/register">Register</NavLink>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
