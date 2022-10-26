@@ -18,7 +18,7 @@ const Header = () => {
                     height="75"
                     className="d-inline-block align-top"
                 />
-                <Navbar.Brand href="#home" className='fs-3 fw-semibold'><Link to="/" className='text-decoration-none text-info'>Code Master</Link></Navbar.Brand>
+                <Navbar.Brand className='fs-3 fw-semibold'><Link to="/" className='text-decoration-none text-info'>Code Master</Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">

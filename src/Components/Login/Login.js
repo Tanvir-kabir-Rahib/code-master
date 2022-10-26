@@ -14,11 +14,11 @@ const Login = () => {
                 </Form.Text>
                 <Form.Group className="my-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control className='py-2' type="email" placeholder="Enter email" />
+                    <Form.Control name='email' className='py-2' type="email" placeholder="Enter email" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control className='py-2' type="password" placeholder="Password" />
+                    <Form.Control name='password' className='py-2' type="password" placeholder="Password" />
                 </Form.Group>
                 <Form.Text className="text-danger">
                     {err}.
