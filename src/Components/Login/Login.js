@@ -1,14 +1,36 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, ButtonGroup, Form } from 'react-bootstrap';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../contexts/AuthProvider';
 import './Login.css';
 
 const Login = () => {
-    const [err, setErr] = useState(null);
+    const [err, setErr] = useState(null)
+    const {login, setLoading} = useContext(AuthContext)
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location.state?.from?.pathname || "/";
+    const handleLogin = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        login(email, password)
+        .then(result => {
+            setErr(null)
+            form.reset()
+                navigate(from, {replace:true})
+
+        })
+        .catch(error => setErr(error.message))
+        .finally(() => {
+            setLoading(false)
+        })
+    }
     return (
         <div className='form-container'>
-            <Form className='w-75 mx-auto mt-5'>
+            <Form onSubmit={handleLogin} className='w-75 mx-auto mt-5'>
                 <Form.Text className='fs-3 fw-semibold text-info'>
                     Please Login
                 </Form.Text>
