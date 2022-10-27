@@ -11,7 +11,7 @@ const Premium = () => {
         toast.success("Accessed as a Premium Member")
     }
     return (
-        <div className='text-center border border-3 w-50 mx-auto py-5 rounded-5'>
+        <div className='text-center border border-3 w-50 mx-auto py-5 rounded-5 mb-5'>
             <div className='d-flex align-items-center justify-content-center'>
                 <FaCrown className='fs-1 me-2 text-warning'></FaCrown>
                 <span className='fs-2 fw-semibold text-success'>Get Premium Access</span>

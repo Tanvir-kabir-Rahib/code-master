@@ -40,7 +40,7 @@ const Login = () => {
                 navigate(from, { replace: true })
                 toast.success("Successfully Logged In.")
             })
-            .catch(error => setErr(error))
+            .catch(error => setErr(error.message))
     }
     const handleGithubLogin = () => {
         providerLogin(githubProvider)
@@ -49,10 +49,11 @@ const Login = () => {
                 navigate(from, { replace: true })
                 toast.success("Successfully Logged In.")
             })
-            .catch(error => setErr(error))
+            .catch(error => setErr(error.message))
     }
     return (
-        <div className='form-container'>
+        <div className='heighter'>
+            <div className='form-container'>
             <Form onSubmit={handleLogin} className='w-75 mx-auto mt-5'>
                 <Form.Text className='fs-3 fw-semibold text-info'>
                     Please Login
@@ -74,11 +75,12 @@ const Login = () => {
                     Login
                 </Button>
                 <p className='mt-2 '>New to Code Master? <Link to="/register" className='text-info fw-semibold'>Create New Account.</Link></p>
-                <ButtonGroup>
-                    <Button className='me-3' variant='outline-primary' onClick={handleGoogleLogin}><FaGoogle /> Login with Google</Button>
-                    <Button className='me-3' variant='outline-dark' onClick={handleGithubLogin}><FaGithub /> Login with Github</Button>
+                <ButtonGroup vertical>
+                    <Button className='mb-3' variant='outline-primary' onClick={handleGoogleLogin}><FaGoogle /> Login with Google</Button>
+                    <Button className='mb-3' variant='outline-dark' onClick={handleGithubLogin}><FaGithub /> Login with Github</Button>
                 </ButtonGroup>
             </Form>
+        </div>
         </div>
     );
 };

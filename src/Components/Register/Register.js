@@ -36,7 +36,7 @@ const Register = () => {
         }
         updateUser(profile)
             .then(() => { })
-            .catch((error) => setErr(error))
+            .catch((error) => setErr(error.message))
     }
     const handleGoogleRegister = () => {
         providerLogin(googleProvider)
@@ -45,7 +45,7 @@ const Register = () => {
             nevigate("/")
             toast.success("Successfully Registered.")
         })
-        .catch(error => setErr(error))
+        .catch(error => setErr(error.message))
     }
     const handleGithubRegister = () =>{
         providerLogin(githubProvider)
@@ -54,7 +54,7 @@ const Register = () => {
             nevigate("/")
             toast.success("Successfully Registered.")
         })
-        .catch(error => setErr(error))
+        .catch(error => setErr(error.message))
     }
     return (
         <div className='form-container'>
@@ -87,9 +87,9 @@ const Register = () => {
                     Register
                 </Button>
                 <p className='mt-2 '>Already have an account? <Link to="/login" className='text-info fw-semibold'>Login.</Link></p>
-                <ButtonGroup>
-                    <Button className='me-3' variant='outline-primary' onClick={handleGoogleRegister}><FaGoogle /> Register with Google</Button>
-                    <Button className='me-3' variant='outline-dark' onClick={handleGithubRegister}><FaGithub /> Register with Github</Button>
+                <ButtonGroup vertical>
+                    <Button className='mb-3' variant='outline-primary' onClick={handleGoogleRegister}><FaGoogle /> Register with Google</Button>
+                    <Button className='mb-3' variant='outline-dark' onClick={handleGithubRegister}><FaGithub /> Register with Github</Button>
                 </ButtonGroup>
             </Form>
         </div>
