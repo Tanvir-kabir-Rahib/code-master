@@ -8,10 +8,10 @@ const CourseLayout = () => {
         <div>
             <Container>
                 <Row>
-                    <Col lg={4} className="d-none d-lg-block">
+                    <Col lg={4} sm={12}>
                         <LeftSideNav></LeftSideNav>
                     </Col>
-                    <Col lg={8}>
+                    <Col lg={8} sm={12}>
                         <Outlet></Outlet>
                     </Col>
                 </Row>

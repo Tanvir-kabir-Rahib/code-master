@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Button, ButtonGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const LeftSideNav = () => {
@@ -9,11 +10,15 @@ const LeftSideNav = () => {
             .then(data => setCourses(data))
     }, [])
     return (
+
         <div>
-            <h4>All Category</h4>
+            <h4>All Courses</h4>
+            <ButtonGroup vertical>
             {
-                courses.map(course => <p key={course.id}><Link to={`/courses/${course.id}`}>{course.course_category}</Link></p>)
+                courses.map(course => <Link to={`/courses/${course.id}`}><Button variant='outline-dark' className='mb-3' key={course.id}>{course.course_category}</Button></Link>)
             }
+            </ButtonGroup>
+            
         </div>
     );
 };
