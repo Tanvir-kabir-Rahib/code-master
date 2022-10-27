@@ -1,6 +1,6 @@
 # Code Master
 
-Live Site of [Web Dev Quizer](https://tanvir02.web.app/) or [https://tanvir02.web.app/].
+Live Site of [Code Master](https://tanvir02.web.app/) or [https://tanvir02.web.app/].
 
 ## Description
 
