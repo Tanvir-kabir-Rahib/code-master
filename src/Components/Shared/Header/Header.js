@@ -46,7 +46,7 @@ const Header = () => {
                     </Nav>
                     {
                         user ?
-                            <div className='d-flex'>
+                            <div className='d-flex align-items-center'>
                                 {
                                     user?.photoURL ?
                                         <Tippy content={user?.displayName}><Image src={user?.photoURL} style={{ height: "45px", width: "45px" }} roundedCircle></Image></Tippy>
