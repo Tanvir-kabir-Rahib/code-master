@@ -76,8 +76,8 @@ const Login = () => {
                 </Button>
                 <p className='mt-2 '>New to Code Master? <Link to="/register" className='text-info fw-semibold'>Create New Account.</Link></p>
                 <ButtonGroup vertical>
-                    <Button className='mb-3' variant='outline-primary' onClick={handleGoogleLogin}><FaGoogle /> Login with Google</Button>
-                    <Button className='mb-3' variant='outline-dark' onClick={handleGithubLogin}><FaGithub /> Login with Github</Button>
+                    <Button className='mb-3 d-flex align-items-center' variant='outline-primary' onClick={handleGoogleLogin}><FaGoogle className='me-1'/><span>Login with Google</span></Button>
+                    <Button className='mb-3 d-flex align-items-center' variant='outline-dark' onClick={handleGithubLogin}><FaGithub className='me-1'/><span>Login with Github</span></Button>
                 </ButtonGroup>
             </Form>
         </div>

@@ -11,3 +11,9 @@
 .heighter {
     height: 90vh;
 }
+
+@media screen and (max-width: 578px) {
+    .form-container {
+        width: 90%;
+    } 
+  }

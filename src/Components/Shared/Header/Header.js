@@ -7,6 +7,7 @@ import logo from '../../../media/picture/logo.png';
 import { AuthContext } from '../../contexts/AuthProvider';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import "./Header.css"
 
 
 
@@ -46,7 +47,7 @@ const Header = () => {
                     </Nav>
                     {
                         user ?
-                            <div className='d-flex align-items-center'>
+                            <div className='d-flex align-items-center profile-margin'>
                                 {
                                     user?.photoURL ?
                                         <Tippy content={user?.displayName}><Image src={user?.photoURL} style={{ height: "45px", width: "45px" }} roundedCircle></Image></Tippy>

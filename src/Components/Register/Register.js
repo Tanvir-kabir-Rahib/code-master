@@ -88,8 +88,8 @@ const Register = () => {
                 </Button>
                 <p className='mt-2 '>Already have an account? <Link to="/login" className='text-info fw-semibold'>Login.</Link></p>
                 <ButtonGroup vertical>
-                    <Button className='mb-3' variant='outline-primary' onClick={handleGoogleRegister}><FaGoogle /> Register with Google</Button>
-                    <Button className='mb-3' variant='outline-dark' onClick={handleGithubRegister}><FaGithub /> Register with Github</Button>
+                <Button className='mb-3 d-flex align-items-center' variant='outline-primary' onClick={handleGoogleRegister}><FaGoogle className='me-1'/><span>Register with Google</span></Button>
+                    <Button className='mb-3 d-flex align-items-center' variant='outline-dark' onClick={handleGithubRegister}><FaGithub className='me-1'/><span>Register with Github</span></Button>
                 </ButtonGroup>
             </Form>
         </div>

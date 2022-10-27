@@ -1,0 +1,9 @@
+.premium-container{
+    width: 50%;
+}
+
+@media screen and (max-width: 578px) {
+    .premium-container {
+        width: 90%;
+    }
+  }

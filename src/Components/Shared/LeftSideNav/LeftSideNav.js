@@ -10,8 +10,7 @@ const LeftSideNav = () => {
             .then(data => setCourses(data))
     }, [])
     return (
-
-        <div>
+        <div className='mb-5'>
             <h4>All Courses</h4>
             <ButtonGroup vertical>
             {
