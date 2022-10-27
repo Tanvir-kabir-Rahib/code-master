@@ -68,7 +68,7 @@ const Header = () => {
                                 } to="/register">Register</NavLink>
                             </Nav>
                     }
-                    <Button onClick={handleTheme} variant={theme ? "light" : "dark"}>
+                    <Button onClick={handleTheme} variant={theme ? "light" : "dark"} className="my-3">
                         Theme {theme ? <FaSun className='text-warning fs-5'></FaSun> : <FaMoon className='text-warning fw-5'></FaMoon>}
                     </Button>
                 </Navbar.Collapse>

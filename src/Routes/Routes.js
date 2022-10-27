@@ -44,12 +44,12 @@ export const routes = createBrowserRouter([
                 children: [
                     {
                         path: "/courses",
-                        loader: () => fetch("http://localhost:4000/courses"),
+                        loader: () => fetch("https://code-master-server-alt.vercel.app/courses"),
                         element: <Courses></Courses>
                     },
                     {
                         path: "/courses/:id",
-                        loader: ({params}) => fetch(`http://localhost:4000/courses/${params.id}`),
+                        loader: ({params}) => fetch(`https://code-master-server-alt.vercel.app/courses/${params.id}`),
                         element: <Course></Course>
                     }
                 ]
