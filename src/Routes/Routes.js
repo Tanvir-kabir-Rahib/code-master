@@ -5,6 +5,7 @@ import Courses from "../Components/Courses/Courses";
 import FAQ from "../Components/FAQ/FAQ";
 import Home from "../Components/Home/Home";
 import Login from "../Components/Login/Login";
+import NotFound from "../Components/NotFound/NotFound";
 import Register from "../Components/Register/Register";
 import CourseLayout from "../Layouts/Courses/CourseLayout";
 import Main from "../Layouts/Main/Main";
@@ -55,5 +56,9 @@ export const routes = createBrowserRouter([
                 ]
             },
         ]
+    },
+    {
+        path: "*",
+        element: <NotFound></NotFound>
     }
 ])

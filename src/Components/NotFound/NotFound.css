@@ -1,0 +1,13 @@
+.notfound-img {
+    max-width: 700px;
+    max-height: 700px;
+}
+
+@media screen and (max-width: 578px) {
+    .notfound-img {
+        max-width: 400px;
+        max-height: 400px;
+        margin: 0 auto;
+    }
+  }
+
