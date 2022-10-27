@@ -15,7 +15,7 @@ const LeftSideNav = () => {
             <h4>All Courses</h4>
             <ButtonGroup vertical>
             {
-                courses.map(course => <Link to={`/courses/${course.id}`}><Button variant='outline-dark' className='mb-3' key={course.id}>{course.course_category}</Button></Link>)
+                courses.map(course => <Link to={`/courses/${course.id}`} key={course.id}><Button variant='outline-dark' className='mb-3'>{course.course_category}</Button></Link>)
             }
             </ButtonGroup>
             

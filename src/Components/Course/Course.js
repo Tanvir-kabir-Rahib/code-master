@@ -1,12 +1,23 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Button, Card, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import "./Course.css"
 
-const Course = () => {
-    const course = useLoaderData()
+const Course = ({ course }) => {
     return (
-        <div>
-            <h1>This is course deatails {course.id}</h1>
-        </div>
+        <Col lg={6} sm={12}>
+            <Card>
+                <Card.Img variant="top" className='img-fluid course-img' src={course.img_url} />
+                <Card.Body>
+                    <Card.Header className='border-0 px-2 mb-2'>{course.course_category}</Card.Header>
+                    <Card.Title>{course.course_name}</Card.Title>
+                    <Card.Text>
+                        {course.details.slice(0, 250) + "..."}
+                    </Card.Text>
+                    <Link to={`/courses/${course.id}`}><Button variant="info" className='text-white fw-semibold'>Show Details</Button></Link>
+                </Card.Body>
+            </Card>
+        </Col>
     );
 };
 
